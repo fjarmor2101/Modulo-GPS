@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4. Programación | MÓDULO GPS TUTORIAL </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Francisco José Jarana y Juan de Dios García " />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.9 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<link rel="stylesheet" type="text/css" href="udl-content.css" />
+<script type="text/javascript" src="udl-content.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">MÓDULO GPS TUTORIAL</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tutorial Módulo GPS 6M</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_contextualizacin_y_reto.html" class="no-ch">2. Contextualización y reto</a></li>
+   <li><a href="3_montaje_fsico_del_dispositivo_robtico.html" class="no-ch">3. Montaje físico del dispositivo robótico</a></li>
+   <li id="active"><a href="4_programacin.html" class="active no-ch">4. Programación</a></li>
+   <li><a href="5_evaluacin.html" class="no-ch">5. Evaluación</a></li>
+   <li><a href="6_recursos_y_enlaces_de_inters.html" class="no-ch">6. Recursos y enlaces de interés</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="3_montaje_fsico_del_dispositivo_robtico.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_evaluacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4. Programación</h1></header>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id9">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Entorno de programación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta9_136_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-engagement"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>💻 Entorno de programación<br>El proyecto se desarrollará utilizando el entorno de programación Arduino IDE, una plataforma libre, multiplataforma y muy extendida en educación técnica y tecnológica. Este entorno permite escribir, compilar y cargar programas (sketches) directamente a la placa Arduino.</p>
+<p>🧰 Herramientas principales:<br>Herramienta<br>Descripción<br>Arduino IDE<br>Entorno principal para programar y cargar el código en la placa. Compatible con Windows, macOS y Linux. Disponible en versión offline y online (Web Editor).<br>Monitor Serial<br>Herramienta integrada en el IDE que permite visualizar datos en tiempo real desde la placa Arduino, clave para depurar y leer datos del módulo GPS.<br>Librería SoftwareSerial<br>Permite habilitar puertos serie virtuales en pines digitales, útil para comunicarse con el módulo GPS sin usar el puerto serie principal.<br>Editor de texto<br>Alternativamente, los alumnos pueden trabajar inicialmente con pseudocódigo o diagramas de flujo antes de programar en el IDE.</p></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id10">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Código Base</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta10_137_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-engagement"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>#include &lt;SoftwareSerial.h&gt;</p>
+<p>SoftwareSerial gps(4,3);</p>
+<p>char dato=' ';</p>
+<p>void setup()<br>{<br>Serial.begin(115200); <br>gps.begin(9600); <br>}</p>
+<p><br>void loop()<br>{<br>if(gps.available())<br>{<br>dato=gps.read();<br>Serial.print(dato);<br>}<br>}</p></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id11">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Desafíos de programación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta11_138_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-expression"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>🧠 Desafíos de programación (Nivel progresivo)<br>🔹 Nivel 1 – Iniciación<br>✅ Objetivo: Entender y manejar la comunicación serial básica.</p>
+<p>Desafío 1.1: Modifica el código para que solo se muestren los datos de una línea concreta del protocolo NMEA (por ejemplo, solo las que empiezan por $GPRMC).<br>Desafío 1.2: Añade un contador que muestre cuántos caracteres ha recibido el GPS desde que se inició el programa.<br><br>🔸 Nivel 2 – Procesamiento de datos<br>✅ Objetivo: Empezar a extraer información útil del flujo de datos GPS.</p>
+<p>Desafío 2.1: Extrae y muestra únicamente las coordenadas de latitud y longitud.<br>Desafío 2.2: Convierte las coordenadas del formato NMEA a decimal (para poder usarlas en Google Maps).<br>Desafío 2.3: Añade una pausa de 1 segundo entre cada lectura para que sea más legible.<br><br>🔺 Nivel 3 – Visualización y control<br>✅ Objetivo: Trabajar la interacción con otros elementos o mejorar la presentación.</p>
+<p>Desafío 3.1: Muestra los datos GPS en una pantalla LCD I2C.<br>Desafío 3.2: Activa un LED solo si el GPS ha detectado señal válida (es decir, si la línea $GPGGA o $GPRMC indica “fix”).<br>Desafío 3.3: Usa un botón físico para pausar o reanudar la lectura de datos GPS.<br><br>🔻 Nivel 4 – Proyecto avanzado<br>✅ Objetivo: Integrar varias habilidades para crear una miniaplicación.</p>
+<p>Desafío 4.1: Guarda la posición GPS en una tarjeta SD cuando se presione un botón.<br>Desafío 4.2: Compara la posición actual con una coordenada fija y enciende un buzzer si se está a menos de 10 metros.<br>Desafío 4.3: Realiza una simulación de rastreo GPS con datos almacenados y muestra el recorrido en pantalla o monitor serial.</p></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id12">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Apoyos DUA</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta12_139_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-engagement"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>♿ Apoyos DUA (Diseño Universal para el Aprendizaje)<br>1. 🧠 Múltiples formas de representación (el qué del aprendizaje)<br>Permite que el alumnado acceda a la información de distintas maneras.</p>
+<p>Explicaciones teóricas apoyadas con esquemas visuales, vídeos y simulaciones.<br>Diagramas de conexión a color, esquemas físicos y diagramas paso a paso.<br>Uso del monitor serial en tiempo real para visualizar el resultado del código.<br>Inclusión de materiales adaptados para alumnos con dificultades de lectura (pictogramas o lenguaje más sencillo si es necesario).<br><br>2. ✋ Múltiples formas de acción y expresión (el cómo del aprendizaje)<br>Ofrece diferentes formas de demostrar lo aprendido.</p>
+<p>Posibilidad de entregar el trabajo final en diferentes formatos: vídeo, presentación, maqueta, diario técnico o defensa oral.<br>Uso de plantillas de código semi-completas para quienes lo necesiten, permitiendo avanzar sin bloqueo inicial.<br>Actividades prácticas de montaje guiado para estudiantes con menos habilidades de abstracción.<br>Apoyo entre iguales (parejas heterogéneas para el trabajo en equipo).<br><br>3. ❤️ Múltiples formas de implicación (el por qué del aprendizaje)<br>Fomenta el interés, la motivación y la persistencia.</p>
+<p>Relación con situaciones reales y motivadoras (seguimiento GPS, exploración espacial, mapas en tiempo real...).<br>Retos opcionales de programación para quien quiera ir más allá (gamificación).<br>Espacios para reflexionar sobre el avance del proyecto (rúbricas de autoevaluación).<br>Refuerzo positivo constante y objetivos alcanzables para todos los niveles.<br><br>Estos apoyos permiten que todo el alumnado participe activamente en el proyecto, respetando su ritmo, estilo de aprendizaje y necesidades individuales.</p></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="3_montaje_fsico_del_dispositivo_robtico.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_evaluacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_escolares_js.js"></script></body></html>
